@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ShoppingListApp">
+    <head>
+        <title>Shopping List</title>
+        <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+        <link rel = "stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.in.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body ng-controller="ListController">
+      <h1>Example #1</h1>
+      <h1>with angular</h1>
+      <hr>
+      <h3>My Shopping List</h3>
+      <h4>So far <big>{{list.length}} items</big></h4>
+      <table>
+        <tr ng-repeat="item in list">
+          <td>{{$index + 1}}</td>
+          <td>{{item}}</td>
+          <td><button class="btn btn-danger" ng-click="removeItem(item)">X</button></td>
+        </tr>
+      </table>
+      <hr/>
+      <input type="text" ng-model="newItem">
+      <button class="btn btn-success"  ng-click="addItem(newItem)">Add</button>
+    </body>
+</html>
